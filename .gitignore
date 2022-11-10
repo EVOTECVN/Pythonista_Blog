@@ -1,0 +1,9 @@
+# Environment
+venv
+.env
+
+# IDEs / Editors
+.idea
+
+# Database
+data/
