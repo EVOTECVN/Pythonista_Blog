@@ -47,6 +47,7 @@ class Post(BaseModel):
     content = RichTextUploadingField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
     tags = models.ManyToManyField(Tag)
+    slug = models.SlugField(unique=True)
     published = PostModelManger()
 
     def __str__(self):

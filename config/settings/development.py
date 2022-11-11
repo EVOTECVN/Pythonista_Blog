@@ -139,5 +139,6 @@ CKEDITOR_CONFIGS = {
             [
                 'codesnippet',
             ]),
+        'codeSnippet_theme': 'monokai_sublime'
     },
 }
