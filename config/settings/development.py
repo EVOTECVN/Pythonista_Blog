@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "ckeditor",  # CKEditor config
     "ckeditor_uploader",  # CKEditor media uploader
+    "fontawesomefree",
     "utils",
     "apps",
     "apps.home",
