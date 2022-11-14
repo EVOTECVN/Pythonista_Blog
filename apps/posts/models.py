@@ -3,6 +3,7 @@ from utils.models import BaseModel
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class Category(BaseModel):
@@ -52,6 +53,9 @@ class Post(BaseModel):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('posts:post_detail', args=[self.slug])
 
     class Meta:
         db_table = 'posts'

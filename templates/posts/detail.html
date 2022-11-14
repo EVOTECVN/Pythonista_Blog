@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>{{ post.title }}</h1>
-    <div class='news_text'>{{ post.content|safe }}</div>
+    <div class="content d-flex flex-column align-items-center mb-5">
+        <h1>{{ post.title }}</h1>
+        <div class="content my-4">{{ post.description }}</div>
+        <img src="{{ post.image.url }}" class="img-fluid w-75" alt="{{ post.title }}">
+    </div>
+    <div class=" content">{{ post.content|safe }}</div>
 {% endblock content %}
