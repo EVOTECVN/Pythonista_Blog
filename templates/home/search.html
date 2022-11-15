@@ -1,19 +1,16 @@
 {% extends "base.html" %}
+
+
+{% block title %}{{ keyword }}{% endblock title %}
 {% block content %}
+
     <div class="container d-flex flex-column align-items-center">
-        <div class="col-lg-6 mx-auto mb-5 d-flex flex-column align-items-center">
-            <h2>Pythonista</h2>
-            <p class="lead mb-4">Some description</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-purple btn-lg px-4 gap-3">Python cơ bản</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-            </div>
-        </div>
         <div class="input-group mb-2">
-            <input type="search" class="form-control rounded"
-                   placeholder="Tìm hướng dẫn, khóa học, videos, trắc nghiệm,..." aria-label="Search"
+            <input id="searchBar" type="search" class="form-control rounded"
+                   value="{{ keyword }}" aria-label="Search"
                    aria-describedby="search-addon"/>
-            <button type="button" class="btn btn-purple">Tìm kiếm</button>
+
+            <button id="searchButton" onclick="searchOnclick()" type="button" class="btn btn-purple">Tìm kiếm</button>
         </div>
         <div class="row justify-content-center align-items-center">
             {% for post in posts %}
@@ -35,4 +32,5 @@
             {% endfor %}
         </div>
     </div>
+
 {% endblock content %}
