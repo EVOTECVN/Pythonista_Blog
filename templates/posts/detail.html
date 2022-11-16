@@ -1,6 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %}{{ post.title }}{% endblock title %}
+
 {% block content %}
+    <link rel="stylesheet" href="{% static 'css/highlight.min.css' %}">
+    <script src="{% static 'js/highlight.min.js' %}"></script>
+    <script src="{% static 'js/posts/initHighlighting.js' %}"></script>
+
     <div class="content d-flex flex-column align-items-center mb-5">
         <h1>{{ post.title }}</h1>
         <div class="content my-4">{{ post.description }}</div>
