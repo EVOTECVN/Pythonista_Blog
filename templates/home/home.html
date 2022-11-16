@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+            integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <div class="container d-flex flex-column align-items-center">
         <div class="col-lg-6 mx-auto mb-5 d-flex flex-column align-items-center">
             <h2>Pythonista</h2>
@@ -15,24 +19,12 @@
                    aria-describedby="search-addon"/>
             <button type="button" class="btn btn-purple">Tìm kiếm</button>
         </div>
+        <div id="postDiv" class="row justify-content-center align-items-center">
+        </div>
         <div class="row justify-content-center align-items-center">
-            {% for post in posts %}
-                <div class="col-md-5 mx-2 my-2">
-                    <a href="{{ post.get_absolute_url }}">
-                        <div class="card">
-                            <img class="card-img-top img-fluid w-100" src="{{ post.image.url }}" alt="{{ post.title }}">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    {{ post.title }}
-                                </h5>
-                                <p class="card-text">
-                                    {{ post.description|truncatechars:50 }}
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            {% endfor %}
+            <button id="loadMore" type="button" class="btn btn-purple btn-sm px-4 gap-3" onclick="loadMore()">Xem thêm</button>
         </div>
     </div>
+
+    <script src="{% static 'js/home/loadPosts.js' %}"></script>
 {% endblock content %}
